@@ -18,6 +18,7 @@ gradient_checkpointing_kwargs:
 learning_rate: 5.0e-7 # 1.0e-6 as in the deepseek math paper 5-e7 from https://hijkzzz.notion.site/unraveling-rlhf-and-its-variants-engineering-insights#147d9a33ecc9806090f3d5c749d31f05
 lr_scheduler_type: cosine
 warmup_ratio: 0.03
+optim: adamw_8bit
 
 # GRPO arguments
 use_vllm: true
@@ -42,5 +43,5 @@ host_maddr: "/ip4/0.0.0.0/tcp/38331"
 max_rounds: 10000
 
 # Model-specific arguments
-model_name_or_path: Gensyn/Qwen2.5-0.5B-Instruct
+model_name_or_path: unsloth/Qwen2.5-0.5B-Instruct-bnb-4bit
 output_dir: runs/gsm8k/multinode/Qwen2.5-0.5B-Instruct-Gensyn-Swarm
